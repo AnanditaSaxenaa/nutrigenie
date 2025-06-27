@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+
+@import "tailwindcss/preflight"
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 107 27% 92%;
+    --foreground: 120 10% 20%;
+    --primary: 130 30% 74%;
+    --primary-foreground: 120 10% 10%;
+
+    --accent: 78 40% 73%;
+    --accent-foreground: 78 25% 15%;
+
+    --card: 107 27% 96%;
+    --card-foreground: 120 10% 20%;
+
+    --popover: 107 27% 96%;
+    --popover-foreground: 120 10% 20%;
+
+    --secondary: 110 25% 88%;
+    --secondary-foreground: 120 10% 15%;
+
+    --muted: 110 25% 88%;
+    --muted-foreground: 120 10% 45%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 110 25% 80%;
+    --input: 110 25% 85%;
+    --ring: 130 30% 65%;
+
+    --radius: 0.5rem;
+
+    /* Chart and Sidebar colors */
+    --chart-1: 130 40% 65%;
+    --chart-2: 78 50% 65%;
+    --chart-3: 45 60% 65%;
+    --chart-4: 200 50% 65%;
+    --chart-5: 300 50% 65%;
+
+    --sidebar-background: 115 20% 85%;
+    --sidebar-foreground: 120 10% 25%;
+    --sidebar-primary: 130 30% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 130 30% 90%;
+    --sidebar-accent-foreground: 120 10% 15%;
+    --sidebar-border: 115 20% 78%;
+    --sidebar-ring: 130 30% 65%;
+  }
+
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-weight: 400;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+  }
+  
+  
+  
+}
