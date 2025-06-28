@@ -22,7 +22,11 @@ export default defineConfig({
       'Cross-Origin-Embedder-Policy': 'require-corp',
     },
     proxy: {
-      '/api': 'https://your-backend-domain.com',
-    }
-  }
-});
+      '/api': {
+        target : process.env.VITE_BACKEND_URL,
+        changeOrigin: true,
+        secure: true
+      }
+    },
+  },
+})

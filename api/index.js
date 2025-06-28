@@ -13,6 +13,8 @@ const app = express();
 app.use(cors({
   origin: process.env.FRONTEND_ORIGIN,
   credentials: true,
+  methods : ['GET','POST','PUT','DELETE','OPTIONS'],
+  allowedHeaders : ['Content-Type','Authorization']
 }));
 app.use(express.json());
 app.use(cookieParser());
@@ -74,7 +76,7 @@ app.post('/login', async (req, res) => {
     .cookie('token', token, {
       httpOnly: true,
       secure: true,
-      sameSite: 'Strict',
+      sameSite: 'none',
       maxAge: 3600000,
     })
     .json({id:user._id,
@@ -114,7 +116,7 @@ app.get('/profile', async (req, res) => {
 app.post('/logout', (req, res) => {
   res.clearCookie('token', {
     httpOnly: true,
-    sameSite: 'Strict',
+    sameSite: 'none',
     secure: process.env.NODE_ENV === 'production', // ✅ dynamic based on environment
   });
   
@@ -216,7 +218,7 @@ app.post('/google-login', async (req, res) => {
 
     res.cookie('token', token, {
       httpOnly: true,
-      sameSite: 'Strict',
+      sameSite: 'none',
       secure: process.env.NODE_ENV === 'production',
     });
     
