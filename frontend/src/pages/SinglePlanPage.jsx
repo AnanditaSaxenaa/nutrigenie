@@ -18,11 +18,13 @@ export default function SinglePlanPage() {
   const { planId } = useParams();
   const navigate = useNavigate();
   const [plan, setPlan] = useState(null);
+  const BACKEND = import.meta.env.VITE_BACKEND_URL;
+
 
   useEffect(() => {
     async function fetchPlan() {
       try {
-        const res = await fetch('http://localhost:4000/my-diet-plans', {
+        const res = await fetch(`${BACKEND}/my-diet-plans`, {
           credentials: 'include',
         });
         if (!res.ok) throw new Error('Not found');
